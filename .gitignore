@@ -5,3 +5,5 @@ node_modules
 # Build directory
 public/
 .DS_Store
+
+!node_modules/gatsby-source-wordpress/*
