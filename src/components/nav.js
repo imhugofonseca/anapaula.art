@@ -65,7 +65,7 @@ const renderPageLink = ({ slug, title, primary, currentPage, active }) => (
         key={slug} 
         to={`/${slug}`} 
         primary={primary || active}
-        className={isCurrentPage(currentPage, slug)}
+        className={isCurrentPage(currentPage, `/${slug}`)}
         dangerouslySetInnerHTML={{ __html: title }}
     />
 )
