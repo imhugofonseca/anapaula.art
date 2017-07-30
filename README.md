@@ -1,13 +1,28 @@
-# gatsby-starter-default
-The default Gatsby starter
+# anapaula.art
+A very simple website using gatsby and its wordpress plugin
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+## Developing
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+First set the required environment variables
 ```
-gatsby new gatsby-example-site
+WP_USER
+
+WP_PASS
+
+WP_CLIENT_ID
+
+WP_CLIENT_SECRET
 ```
 
-## Deploy
+Install stuff
+`npm install`
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Start developing
+`gastby develop`
+
+
+## Hosting
+This website is fully hosted in Netlify and with wordpress.com.
+
+To deploy changes from wordpress.com I have a script running somewhere in a server of mine that checks for changes in wordpress.com and triggers the build in netlify
+
