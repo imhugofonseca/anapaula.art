@@ -4,7 +4,7 @@ import * as PropTypes from "prop-types"
 import TouchIcon from './assets/apple-touch-icon.png'
 import Favicon32 from './assets/favicon-32x32.png'
 import Favicon16 from './assets/favicon-16x16.png'
-import Manifest from 'url-loader!./assets/manifest.json'
+import Manifest from './assets/manifest.json'
 import PinnedTab from './assets/safari-pinned-tab.svg'
 
 let stylesStr

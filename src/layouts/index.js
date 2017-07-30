@@ -36,6 +36,7 @@ export default class TemplateWrapper extends React.Component {
     });
   }
   render() {
+    console.log(this.props)
     return (
       <div>
         <Helmet
@@ -44,7 +45,7 @@ export default class TemplateWrapper extends React.Component {
             { name: 'description', content: 'O meu portfólio de fotografia.' },
             { name: 'keywords', content: 'photo, fotografia, ana fonseca, aveiro, torreira, portfolio' },
             { name: 'theme-color', content: '#5899E2' },
-            { name: 'og:image', content: FbImg }
+            { name: 'og:image', content: `https://anapaula.art/${FbImg}` }
           ]}
         />
         {this.state.loading &&  <Loading fadeOut={this.state.loadingFade}></Loading> }
