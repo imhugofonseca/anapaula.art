@@ -37,10 +37,10 @@ export default class TemplateWrapper extends React.Component {
     return (
       <div>
         <Helmet
-          title="Gatsby Default Starter"
+          title="Ana Fonseca - Fotografia"
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'Portfolio fotografico' },
+            { name: 'keywords', content: 'photo, fotografia, ana fonseca, aveiro, torreira, portfolio' },
           ]}
         />
         {this.state.loading &&  <Loading fadeOut={this.state.loadingFade}></Loading> }
