@@ -4,9 +4,8 @@ import * as PropTypes from "prop-types"
 import TouchIcon from './assets/apple-touch-icon.png'
 import Favicon32 from './assets/favicon-32x32.png'
 import Favicon16 from './assets/favicon-16x16.png'
-import Manifest from './assets/manifest.json'
+import Manifest from 'url-loader!./assets/manifest.json'
 import PinnedTab from './assets/safari-pinned-tab.svg'
-
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -36,7 +35,7 @@ class Html extends Component {
           <meta charSet="utf-8" />
           <meta name="referrer" content="origin" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        
+  
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

@@ -7,6 +7,8 @@ import imagesLoaded from 'imagesloaded'
 
 import Loading from '../components/loading'
 
+import FbImg from '../assets/fb.png'
+
 import './index.css'
 
 export default class TemplateWrapper extends React.Component {
@@ -37,11 +39,12 @@ export default class TemplateWrapper extends React.Component {
     return (
       <div>
         <Helmet
-          title="Ana Fonseca - Fotografia"
+          title="Ana Paula Fonseca - Fotografia"
           meta={[
-            { name: 'description', content: 'Portfolio fotografico' },
+            { name: 'description', content: 'O meu portfólio de fotografia.' },
             { name: 'keywords', content: 'photo, fotografia, ana fonseca, aveiro, torreira, portfolio' },
-            { name: 'theme-color', content: '#5899E2' }
+            { name: 'theme-color', content: '#5899E2' },
+            { name: 'og:image', content: FbImg }
           ]}
         />
         {this.state.loading &&  <Loading fadeOut={this.state.loadingFade}></Loading> }
