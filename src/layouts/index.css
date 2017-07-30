@@ -514,22 +514,22 @@ a {
 
 @keyframes coolors {
   0% {
-    color: #5899E2;
+    fill: #5899E2;
   }
   20% {
-    color: #B3B3F1;
+    fill: #B3B3F1;
   }
   40% {
-    color: #FFD166;
+    fill: #FFD166;
   }
   60% {
-    color: #06D6A0;
+    fill: #06D6A0;
   }
   80% {
-    color: #CEC2FF;
+    fill: #CEC2FF;
   }
   100% {
-    color: #5899E2;
+    fill: #5899E2;
   }
 };
 
