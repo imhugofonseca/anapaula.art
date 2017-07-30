@@ -115,7 +115,6 @@ const Content = styled.div`
 const PageTemplate = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
-  const categoryPosts = props.data.allWordpressPost;
   const page = props.data.wordpressPage;
 
   return (
@@ -123,7 +122,7 @@ const PageTemplate = (props) => {
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
       <Container>
         <Title dangerouslySetInnerHTML={{ __html: page.title }} />
-        <Content dangerouslySetInnerHTML={{ __html: content }} />
+        <Content dangerouslySetInnerHTML={{ __html: page.content }} />
       </Container>
       <CategoryFooter />
     </Wrapper>

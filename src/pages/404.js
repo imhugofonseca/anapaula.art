@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Gallery from '../components/gallery'
 import Container from '../components/container'
 
 const Title = styled.h1`
@@ -116,10 +115,9 @@ const Content = styled.div`
 
 `;
 
-const NotFound = (props) => {
+const NotFoundPage = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
-  const categoryPosts = props.data.allWordpressPost;
 
   return (
     <Wrapper>
@@ -133,11 +131,11 @@ const NotFound = (props) => {
   )
 }
 
-export default NotFound
+export default NotFoundPage
 
 
 export const notFoundQuery = graphql`
-  query notFound {  
+  query notFoundQuery {  
     allWordpressPage {
       edges {
         node {

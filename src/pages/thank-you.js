@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Gallery from '../components/gallery'
 import Container from '../components/container'
 
 const Title = styled.h1`
@@ -113,27 +112,25 @@ const Content = styled.div`
 
 `;
 
-const ThankYou = (props) => {
-  const categories = props.data.allWordpressCategory;
-  const pages = props.data.allWordpressPage;
-  const categoryPosts = props.data.allWordpressPost;
+export default class ThankYouPage extends React.Component {
+  render() {
+    const categories = this.props.data.allWordpressCategory;
+    const pages = this.props.data.allWordpressPage;
 
-  return (
-    <Wrapper>
-      <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
-      <Container>
-        <Title>Contacto</Title>
-        <Content>
-          <h1>Obrigado pelo seu contacto</h1>       
-        </Content>        
-      </Container>
-      <CategoryFooter />
-    </Wrapper>
-  )
+    return (
+      <Wrapper>
+        <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
+        <Container>
+          <Title>Contacto</Title>
+          <Content>
+            <h1>Obrigado pelo seu contacto</h1>       
+          </Content>        
+        </Container>
+        <CategoryFooter />
+      </Wrapper>
+    )
+  }
 }
-
-export default ThankYou
-
 
 export const thanksQuery = graphql`
   query thanksQuery {  
