@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const CategoryFooter = styled(Footer)`
   text-align: center;
-  color: #222;
+  color: #222!important;
   padding: 40px 0;
   opacity: 0.7;
 

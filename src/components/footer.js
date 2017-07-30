@@ -17,13 +17,17 @@ const SelfPromotion = styled.p`
 `;
 
 const Love = styled.span`
-    color: #5899E2;
+    color: #B3B3F1;
+`;
+
+const Link = styled.a`
+    color: #222;
 `;
 
 const Footer = ({ className }) => (
     <Wrapper className={className}>
         <Text>All photos are mine and would like to be asked permission when using them.</Text>
-        <SelfPromotion>Made with <Love>&#10084;</Love> by <a href="https://github.com/kapz" target="_blank" rel="noopener">hugo</a> using gatsby & wordpress</SelfPromotion>
+        <SelfPromotion>Made with <Love>&#10084;</Love> by <Link href="https://github.com/kapz" target="_blank" rel="noopener">hugo</Link> using gatsby & wordpress</SelfPromotion>
     </Wrapper>
 )
 
