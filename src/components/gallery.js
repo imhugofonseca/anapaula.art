@@ -1,22 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import LazyLoad from 'react-lazyload';
 
 import 'animate.css'
 
 
 const Wrapper = styled.div`
-    columns: 2;
-    column-gap: 20px;
     height: auto;
-
-
-    @media screen and (max-width: 768px) {
-        columns: 2;
-    }
+    display: flex;
+    width: 100%;   
 
     @media screen and (max-width: 468px) {
-        columns: initial;
+        flex-direction: column;
+    } 
+`;
+
+const LeftRow = styled.div`
+    width: 50%;
+    flex: 0.5;
+    padding-right: 10px;
+
+    @media screen and (max-width: 468px) {
+        width: 100%;
+        flex: 1;
+    }
+`;
+
+const RightRow = styled.div`
+    width: 50%;
+    flex: 0.5;
+    padding-left: 10px;
+
+    @media screen and (max-width: 468px) {
+        width: 100%;
+        flex: 1;
     }    
 `;
 
@@ -73,20 +91,43 @@ const renderPost = ({ id, slug, featured_media_url, title, i }) => (
     <Item key={id} to={`/post/${slug}`} className={`animated fadeIn`} style={{
         animationDelay: `${300 * i}ms`
     }}>
-        <Image src={`${featured_media_url}?quality=90&strip=info&w=1200`} alt={title}></Image>
+        <LazyLoad height={200} once>
+            <Image src={`${featured_media_url}?quality=90&strip=info&w=1200`} alt={title}></Image>
+        </LazyLoad>
         <Hover className={'hover'}>
             <Title dangerouslySetInnerHTML={{ __html: title }} />
         </Hover>
     </Item>
 )
 
-const Gallery = ({ posts }) => (
-    <Wrapper>
-        {posts && 
-            posts.edges
-                .map((edge, i) => renderPost({ ...edge.node, i }))
-        }
-    </Wrapper>
-)
+const Gallery = ({ posts }) => {
+    const half = Math.ceil(posts.edges.length / 2);
+    let leftRow = posts.edges.slice(0, half);
+    let rightRow = posts.edges.slice(half);
+
+    if (posts.edges.length % 2) {
+        rightRow.push(leftRow[leftRow.length - 1])
+        leftRow.pop()
+    }
+
+
+    return (
+        <Wrapper>
+            <LeftRow>
+                {leftRow && 
+                    leftRow
+                        .map((edge, i) => renderPost({ ...edge.node, i }))
+                }
+            </LeftRow>
+
+            <RightRow>
+                {rightRow && 
+                    rightRow
+                        .map((edge, i) => renderPost({ ...edge.node, i }))
+                }
+            </RightRow>            
+        </Wrapper>
+    )
+}
 
 export default Gallery

@@ -73,7 +73,7 @@ const ImageOverlay = styled.div`
     left: 0;
     background: url(${Layer}) repeat scroll left top;
     z-index: 2;
-    opacity: 0.4;
+    opacity: 0.2;
 
 `;
 

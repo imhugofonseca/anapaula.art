@@ -12,6 +12,7 @@
     "gatsby-plugin-styled-components": "^1.0.1",
     "gatsby-source-wordpress": "^1.5.0",
     "imagesloaded": "^4.1.3",
+    "react-lazyload": "^2.2.7",
     "react-transition-group": "^2.2.0"
   },
   "keywords": [
