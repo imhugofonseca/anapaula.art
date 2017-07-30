@@ -9,21 +9,17 @@ import Container from '../components/container'
 
 const Title = styled.h1`
   text-align: center;
-  padding-top: 100px;
+  padding: 40px 0;
   letter-spacing: 4px;
   font-weight: 100;
   color: #DDD;
   text-transform: uppercase;
-  font-size: 150px;
-
 `
 
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 `;
 
 const CategoryFooter = styled(Footer)`
@@ -62,6 +58,7 @@ const Content = styled.div`
     color: #5899E2;
     text-transform: lowercase;
     font-weight: 100;
+    text-align: center;
   }
 
   p {
@@ -116,7 +113,7 @@ const Content = styled.div`
 
 `;
 
-const NotFound = (props) => {
+const ThankYou = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
   const categoryPosts = props.data.allWordpressPost;
@@ -125,19 +122,21 @@ const NotFound = (props) => {
     <Wrapper>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
       <Container>
-        <Title>404</Title> 
-     
+        <Title>Contacto</Title>
+        <Content>
+          <h1>Obrigado pelo seu contacto</h1>       
+        </Content>        
       </Container>
       <CategoryFooter />
     </Wrapper>
   )
 }
 
-export default NotFound
+export default ThankYou
 
 
-export const notFoundQuery = graphql`
-  query notFound {  
+export const thanksQuery = graphql`
+  query thanksQuery {  
     allWordpressPage {
       edges {
         node {

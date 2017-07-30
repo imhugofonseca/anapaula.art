@@ -9,21 +9,17 @@ import Container from '../components/container'
 
 const Title = styled.h1`
   text-align: center;
-  padding-top: 100px;
+  padding: 40px 0;
   letter-spacing: 4px;
   font-weight: 100;
   color: #DDD;
   text-transform: uppercase;
-  font-size: 150px;
-
 `
 
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 `;
 
 const CategoryFooter = styled(Footer)`
@@ -116,28 +112,45 @@ const Content = styled.div`
 
 `;
 
-const NotFound = (props) => {
+const Contact = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
   const categoryPosts = props.data.allWordpressPost;
+
+  // Todo the form should send to wordpres...
 
   return (
     <Wrapper>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
       <Container>
-        <Title>404</Title> 
-     
+        <Title>Contacto</Title>
+        <Content>
+          <form name="contact" action="thank-you" netlify>
+            <p>
+              <label>Nome: <input type="text" name="name" /></label>   
+            </p>
+            <p>
+              <label>Email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>Mensagem: <textarea name="message" /></label>
+            </p>
+            <p>
+              <input type="submit" value="Enviar" />
+            </p>
+          </form>        
+        </Content>        
       </Container>
       <CategoryFooter />
     </Wrapper>
   )
 }
 
-export default NotFound
+export default Contact
 
 
-export const notFoundQuery = graphql`
-  query notFound {  
+export const contactQuery = graphql`
+  query contactQuery {  
     allWordpressPage {
       edges {
         node {
