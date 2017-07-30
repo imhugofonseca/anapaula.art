@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layer from '../assets/layer.png'
+import Link from 'gatsby-link'
 
 const Wrapper = styled.div`
     position: absolute;
@@ -8,7 +9,6 @@ const Wrapper = styled.div`
     bottom: 0;
     right: 0;
     left: 0;
- 
     overflow:hidden;
 `;
 
@@ -47,7 +47,7 @@ const Slide = styled.div`
 
 
 
-const RightTitle = styled.h2`
+const RightTitle = styled(Link)`
     position: absolute;
     right: 60px;
     bottom: 60px;
@@ -77,11 +77,11 @@ const ImageOverlay = styled.div`
 
 `;
 
-const renderSlide = (index, { featured_media_url, title }, current) => (
+const renderSlide = (index, { featured_media_url, title, slug }, current) => (
     <Slide key={`slide_${index}}`} isCurrent={index === current}>
         <ImageOverlay></ImageOverlay>
         <Image src={featured_media_url} alt={title} className={'slide-image'} />
-        <RightTitle>{title}</RightTitle>
+        <RightTitle to={`/post/${slug}`}>{title}</RightTitle>
     </Slide>   
 )
 

@@ -61,7 +61,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: slash(pageTemplate),
             context: {
               id: edge.node.id,
-              content: edge.node.content
             },
           })
         })

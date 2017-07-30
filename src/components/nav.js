@@ -37,8 +37,8 @@ const Wrapper = styled.nav`
 const A = styled(Link)`
     color: ${(props) => props.primary ? '#B3D0F1' : '#FFF'};
     text-decoration: none;
-    margin-right: 35px;
-    font-size: 22px;
+    margin-right: 25px;
+    font-size: 20px;
     font-family: 'Pacifico', cursive;
     text-shadow: ${(props) => props.primary ? 'none' : '0 0 2px rgba(0,0,0, .4)'};
     transition: all .2s ease-in-out;
@@ -59,14 +59,14 @@ const isCurrentPage = (currentPage, path) => {
 }
 
 const isValidPage = ({ node }) => {
-    const slug = node.slug;
+    const slug = node.slug || node.title;
     return !INVALID_PAGES.find((v) => v  === slug);
 }
 
 const renderPageLink = ({ slug, title, primary, currentPage, active }) => (
     <A 
         key={slug} 
-        to={slug} 
+        to={`/${slug}`} 
         primary={primary || active}
         className={isCurrentPage(currentPage, slug)}
         dangerouslySetInnerHTML={{ __html: title }}
@@ -101,7 +101,7 @@ const Nav = ({ pages, categories, primary, currentPage, active }) => (
         {pages && 
             pages.edges
                 .filter(isValidPage)
-                .map((edge) => renderCategoryLink({ ...edge.node, primary, currentPage, active }))
+                .map((edge) => renderPageLink({ ...edge.node, primary, currentPage, active }))
         }
 
     </Wrapper>
