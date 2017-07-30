@@ -118,12 +118,6 @@ const PageTemplate = (props) => {
   const categoryPosts = props.data.allWordpressPost;
   const page = props.data.wordpressPage;
 
-  // hehe please dont judge im lazy 
-  const wordpressForm = `<form action='https://anapaulaphoto.wordpress.com/contact/#contact-form-3' method='post' class='contact-form commentsblock'>`;
-  const netlifyForm = `<form name=\"contact\" action=\"thank-you\" netlify>`
-  console.log(page.content)
-  const content = page.content.replace(wordpressForm, netlifyForm);
-
   return (
     <Wrapper>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
