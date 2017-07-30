@@ -41,6 +41,7 @@ export default class TemplateWrapper extends React.Component {
           meta={[
             { name: 'description', content: 'Portfolio fotografico' },
             { name: 'keywords', content: 'photo, fotografia, ana fonseca, aveiro, torreira, portfolio' },
+            { name: 'theme-color', content: '#5899E2' }
           ]}
         />
         {this.state.loading &&  <Loading fadeOut={this.state.loadingFade}></Loading> }
