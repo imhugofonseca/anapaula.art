@@ -80,7 +80,7 @@ const ImageOverlay = styled.div`
 const renderSlide = (index, { featured_media_url, title, slug }, current) => (
     <Slide key={`slide_${index}}`} isCurrent={index === current}>
         <ImageOverlay></ImageOverlay>
-        <Image src={featured_media_url} alt={title} className={'slide-image'} />
+        <Image src={`${featured_media_url}?quality=60&stripinfo=true`} alt={title} className={'slide-image'} />
         <RightTitle to={`/post/${slug}`}>{title}</RightTitle>
     </Slide>   
 )
