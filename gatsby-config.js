@@ -4,6 +4,22 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        "name": "Ana Paula Fonseca",
+        "icons": [
+            {
+                "src": "/android-chrome-144x144.png",
+                "sizes": "144x144",
+                "type": "image/png"
+            }
+        ],
+        "theme_color": "#ffffff",
+        "background_color": "#ffffff",
+        "display": "standalone"
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     {
