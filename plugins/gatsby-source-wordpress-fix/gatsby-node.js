@@ -38,7 +38,10 @@ var axiosHelper = function () {
             _context2.prev = 1;
             options = {
               method: 'get',
-              url: url
+              url: url,
+              params: {
+                per_page: 100
+              }
             };
 
             if (_auth != undefined) {

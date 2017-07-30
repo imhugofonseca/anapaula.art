@@ -11,7 +11,14 @@ const HomeFooter = styled(Footer)`
   z-index: 4;
   left: 50px;
   bottom: 20px;
-  opacity: 0.6;
+  opacity: 0.8;
+
+  @media screen and (max-width: 468px) {
+    position: absolute;
+    left: 0;
+    padding: 0 20px;
+    text-align: center;
+  }
 `;
 
 
@@ -57,7 +64,6 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const categories = this.props.data.allWordpressCategory;
     const pages = this.props.data.allWordpressPage;
     const slides = this.props.data.allWordpressPost.edges;

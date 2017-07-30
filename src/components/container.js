@@ -7,6 +7,10 @@ const Wrapper = styled.div`
     display: block;
     width: 100%;
     flex : 1;
+
+    @media screen and (max-width: 456px) {
+        padding: 0 20px;
+    }    
 `;
 
 const Container = ({ children, className }) => (

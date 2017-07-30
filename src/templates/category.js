@@ -11,6 +11,9 @@ const Title = styled.h1`
   text-align: center;
   padding: 40px 0;
   letter-spacing: 4px;
+  font-weight: 100;
+  color: #DDD;
+  text-transform: uppercase;
 `
 
 const Wrapper = styled.div`
@@ -24,6 +27,10 @@ const CategoryFooter = styled(Footer)`
   color: #222;
   padding: 40px 0;
   opacity: 0.7;
+
+  @media screen and (max-width: 468px) {
+    padding: 20px;
+  }
 `;
 
 
@@ -37,7 +44,7 @@ const PageTemplate = (props) => {
     <Wrapper>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
       <Container>
-        <Title>{category.name}</Title>
+        <Title dangerouslySetInnerHTML={{ __html: category.name }} />
         <Gallery posts={categoryPosts}></Gallery>
       </Container>
       <CategoryFooter />

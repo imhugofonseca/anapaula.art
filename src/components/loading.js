@@ -9,7 +9,7 @@ const Overlay = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    animation: coolors 10s infinite;
+    background: #FCFCFC;
     z-index: 50;
     display: flex;
     align-items: center;
@@ -22,12 +22,21 @@ const Overlay = styled.div`
 
 const AnimatedBrand = styled(Brand)`
     animation: jello 1s infinite;
+    text-shadow: none;
+    width: 100%;
+    text-align: center;
+    display: block;
+`;
+
+const Text = styled.span`
+    animation: coolors 1s infinite;
+    margin-left: 10px;
 `;
 
 
 const Loading = ({ fadeOut }) => (
     <Overlay className={fadeOut && `fadeOutBro`}>
-        <AnimatedBrand className={fadeOut && `animated zoomOut`}>af</AnimatedBrand>
+        <AnimatedBrand className={fadeOut && `animated zoomOut`}><Text>af&nbsp;</Text></AnimatedBrand>
     </Overlay>
 )
 
