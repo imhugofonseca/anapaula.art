@@ -73,7 +73,7 @@ const renderPost = ({ id, slug, featured_media_url, title, i }) => (
     <Item key={id} to={`/post/${slug}`} className={`animated fadeIn`} style={{
         animationDelay: `${300 * i}ms`
     }}>
-        <Image src={`${featured_media_url}?quality=60&strip=info`} alt={title}></Image>
+        <Image src={`${featured_media_url}?quality=60&strip=info&w=900`} alt={title}></Image>
         <Hover className={'hover'}>
             <Title dangerouslySetInnerHTML={{ __html: title }} />
         </Hover>
