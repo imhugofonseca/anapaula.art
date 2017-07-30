@@ -23,7 +23,7 @@ const Love = styled.span`
 const Footer = ({ className }) => (
     <Wrapper className={className}>
         <Text>All photos are mine and would like to be asked permission when using them.</Text>
-        <SelfPromotion>Made with <Love>&#10084;</Love> by <a href="https://github.com/kapz" target="_blank">hugo</a> using gatsby & wordpress</SelfPromotion>
+        <SelfPromotion>Made with <Love>&#10084;</Love> by <a href="https://github.com/kapz" target="_blank" rel="noopener">hugo</a> using gatsby & wordpress</SelfPromotion>
     </Wrapper>
 )
 

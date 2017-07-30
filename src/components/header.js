@@ -89,7 +89,7 @@ export default class Header extends React.Component {
                         
                     </Left> 
                     <Right>
-                        <Social href={`https://www.facebook.com/anapaulafons`} target={'_blank'}>
+                        <Social href={`https://www.facebook.com/anapaulafons`} target={'_blank'} rel="noopener">
                             <span className={'icon-social-facebook'}></span>
                         </Social>
                         <HeaderHamburger onClick={() => this.onClickHamburger()} active={this.state.hamburgerActive} />
