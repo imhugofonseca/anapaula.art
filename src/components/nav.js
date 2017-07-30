@@ -34,7 +34,7 @@ const Wrapper = styled.nav`
     }    
 `
 
-const A = styled(Link)`
+const A = styled(({ primary, children, ...rest }) => <Link {...rest}>{children}</Link>)`
     color: ${(props) => props.primary ? '#B3D0F1' : '#FFF'};
     text-decoration: none;
     margin-right: 25px;
@@ -48,9 +48,6 @@ const A = styled(Link)`
         color: #5899E2;
         text-shadow: ${(props) => props.primary ? 'none' : '0 0 2px rgba(255,255,255, .4)'};
     }
-
-    
-   
 `
 const INVALID_PAGES = ['uncategorized'];
 

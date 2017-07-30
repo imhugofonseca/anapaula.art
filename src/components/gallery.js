@@ -24,6 +24,7 @@ const LeftRow = styled.div`
     @media screen and (max-width: 468px) {
         width: 100%;
         flex: 1;
+        padding: 0;
     }
 `;
 
@@ -35,6 +36,7 @@ const RightRow = styled.div`
     @media screen and (max-width: 468px) {
         width: 100%;
         flex: 1;
+        padding: 0;
     }    
 `;
 
