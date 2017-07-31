@@ -123,7 +123,7 @@ const Contact = (props) => {
       <Container>
         <Title>Contacto</Title>
         <Content>
-          <form name="contact" action="thank-you" netlify>
+          <form name="contact" action="thank-you" method="post" netlify>
             <p>
               <label>Nome: <input type="text" name="name" /></label>   
             </p>
